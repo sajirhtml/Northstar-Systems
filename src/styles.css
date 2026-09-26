@@ -155,12 +155,17 @@
 @keyframes system-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .28; } }
 @keyframes line-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes rise-reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-line { from { opacity: 0; transform: translateY(1.05em); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scroll-reveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes ticker { to { transform: translateX(-50%); } }
 @keyframes scan { to { background-position: 0 48px; } }
 
 @utility animate-system-pulse { animation: system-pulse 1.5s steps(2) infinite; }
 @utility animate-line-draw { transform-origin: left; animation: line-draw .9s cubic-bezier(.2,.8,.2,1) both; }
 @utility animate-rise-reveal { animation: rise-reveal .65s cubic-bezier(.2,.8,.2,1) both; }
+@utility animate-hero-item { animation: rise-reveal .75s cubic-bezier(.2,.8,.2,1) both; }
+@utility animate-hero-line { animation: hero-line .9s cubic-bezier(.2,.8,.2,1) both; }
+@utility scroll-reveal { opacity: 0; transform: translateY(24px); }
 @utility animate-ticker { animation: ticker 24s linear infinite; }
 @utility system-grid {
   background-image: linear-gradient(to right, color-mix(in oklab, var(--foreground) 7%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 7%, transparent) 1px, transparent 1px);
@@ -168,6 +173,9 @@
   animation: scan 8s linear infinite;
 }
 
+.scroll-reveal.is-visible { animation: scroll-reveal .75s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms) both; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .scroll-reveal { opacity: 1; transform: none; }
 }
