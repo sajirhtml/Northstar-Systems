@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the public site as a single editorial homepage with anchored sections; this preserves the fast, continuous No Graphism-inspired experience.
+- Use semantic design tokens and the shared Button component for interactive controls; this keeps the visual system consistent.
